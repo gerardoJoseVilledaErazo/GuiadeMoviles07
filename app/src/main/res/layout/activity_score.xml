@@ -49,4 +49,18 @@
         android:textSize="18sp"
         android:textAlignment="center" />
 
+    <TextView
+        android:id="@+id/txtAccuScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txtNumberScore"
+        android:text="@string/accu_score"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintVertical_bias="0.05"
+        android:textColor="@color/gray"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textAlignment="center" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
