@@ -35,6 +35,7 @@
 
     <!-- Score Activity-->
     <string name="score">Score</string>
-    <string name="accu_score">Accumulated Score</string>
+    <string name="actual_score">Actual Score: 0</string>
+    <string name="accu_score">Accumulated Score: 0</string>
     <string name="see_score">SEE SCORE</string>
 </resources>

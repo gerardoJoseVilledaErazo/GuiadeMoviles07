@@ -24,10 +24,8 @@ public class PlayActivity extends AppCompatActivity {
     TextView txtUser, txtAttempts, txtAnswer;
     TextInputEditText edtEnter;
     MaterialButton btnDone;
-
     public static SharedPreferences sharedPreferences;
     public static String NAME_FILE = "configuration";
-
     Integer attempts = 10;
     boolean esIgual;
 
@@ -47,11 +45,15 @@ public class PlayActivity extends AppCompatActivity {
         btnDone = (MaterialButton) findViewById(R.id.btnDone);
 
         txtAttempts.setText("Number of attempts allowed: " + attempts);
+
         sharedPreferences = getSharedPreferences(NAME_FILE, MODE_PRIVATE);
         String user = sharedPreferences.getString("USER", "");
 
         if ( user == null){
+            Intent intent = new Intent(PlayActivity.this, LoginActivity.class);
+            startActivity(intent); // Inicia Activity
             Toast.makeText(PlayActivity.this, "Login first.",Toast.LENGTH_SHORT).show();
+
         }else{
             txtUser.setText("User: " + user);
         }
@@ -140,13 +142,6 @@ public class PlayActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-        // Fetching the stored data
-        // from the SharedPreference
-        sharedPreferences = getSharedPreferences(NAME_FILE, MODE_PRIVATE);
-
-        // Setting the fetched data
-        // in the EditTexts
     }
 
     // Store the data in the SharedPreference

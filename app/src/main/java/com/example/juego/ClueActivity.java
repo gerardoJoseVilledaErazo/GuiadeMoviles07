@@ -19,21 +19,10 @@ public class ClueActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clue);
-
         if(getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-
         txtAnswer = (TextView) findViewById(R.id.txtAnswer);
-
-        sharedPreferences = getSharedPreferences(NAME_FILE, MODE_PRIVATE);
-        /*
-        SharedPreferences.Editor editorConfig = sharedPreferences.edit();
-        Integer answerValue = (int) (Math.random() * n) + 1;
-        editorConfig.putString("ANSWER", answerValue.toString() );
-        editorConfig.commit();*/
-        String answer = sharedPreferences.getString("ANSWER", "");
-        txtAnswer.setText(answer);
     }
 
     @Override
